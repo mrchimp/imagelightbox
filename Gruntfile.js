@@ -13,13 +13,42 @@ module.exports = function(grunt) {
         }
       }
     },
+    jshint: {
+      dist: ['src/imagelightbox.js']
+    },
+    less: {
+      dist: {
+        options: {
+          paths: [
+            'src/imagelightbox.less'
+          ]
+        },
+        files: {
+          'dist/imagelightbox.css': 'src/imagelightbox.less'
+        }
+      }
+    },
+    cssmin: {
+      dist: {
+        files: {
+          'dist/imagelightbox.min.css': ['dist/imagelightbox.css']
+        }
+      }
+    },
     focus: {
       all: {}
     },
     watch: {
-      dist: {
+      js: {
         files: ['src/*.js'],
         tasks: ['uglify:build'],
+        options: {
+          nospawn: true
+        }
+      },
+      less: {
+        files: ['src/*.less'],
+        tasks: ['less:dist', 'cssmin:dist'],
         options: {
           nospawn: true
         }
@@ -29,10 +58,12 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-focus');
-  grunt.loadNpmTasks('grunt-jshint');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  grunt.registerTask('default', ['jshint', 'uglify']);
+  grunt.registerTask('default', ['less', 'jshint', 'uglify', 'cssmin']);
   grunt.registerTask('watch-all', ['focus:all']);
 
 };
