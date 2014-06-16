@@ -1,9 +1,9 @@
 {
   "name": "imagelightbox",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/mrchimp/imagelightbox",
   "authors": [
-    "Jake Gully <jake@yadda.co.uk>"
+    "Jake Gully <jake@yadda.co.uk>",
     "Osvaldas Valutis <osvaldas@osvaldas.info>"
   ],
   "description": "simple lightbox for images",
