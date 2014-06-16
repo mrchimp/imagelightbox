@@ -1,0 +1,23 @@
+{
+  "name": "imagelightbox",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mrchimp/imagelightbox",
+  "authors": [
+    "Jake Gully <jake@yadda.co.uk>"
+    "Osvaldas Valutis <osvaldas@osvaldas.info>"
+  ],
+  "description": "simple lightbox for images",
+  "main": "dist/imagelightbox.min.js",
+  "keywords": [
+    "lightbox",
+    "images"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
