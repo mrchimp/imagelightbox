@@ -1,26 +1,44 @@
 
+@imagelightbox-container-z-index: 10000;
+
+@imagelightbox-mask-color: #000;
+@imagelightbox-mask-color-alpha: rgba(0, 0, 0, 0.9);
+@imagelightbox-mask-z-index: 9999;
+
+@imagelightbox-control-color: #fff;
+@imagelightbox-control-z-index: 10001;
+@imagelightbox-control-font-size: 34px;
+
+@imagelightbox-prev-width: 20px;
+@imagelightbox-prev-height: 34px;
+@imagelightbox-prev-image-url: "../img/prev_arrow.png";
+
+@imagelightbox-next-width: @imagelightbox-prev-width;
+@imagelightbox-next-height: @imagelightbox-prev-height;
+@imagelightbox-next-image-url: "../img/next_arrow.png";
+
 #imagelightbox {
   position: fixed;
-  z-index: 10000;
+  z-index: @imagelightbox-container-z-index;
 }
 
 #imagelightboxmask {
   position: fixed;
-  background: #000;
-  background: rgba(0, 0, 0, 0.9);
+  background: @imagelightbox-mask-color;
+  background: @imagelightbox-mask-color-alpha;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 9999;
+  z-index: @imagelightbox-mask-z-index;
 }
 
 .imagelightboxcontrol {
-  z-index: 10001;
-  color: #fff;
+  z-index: @imagelightbox-control-z-index;
+  color: @imagelightbox-control-color;
   position: fixed;
   font-weight: bold;
-  font-size: 34px;
+  font-size: @imagelightbox-control-font-size;
   text-decoration: none;
 
   &:hover {
@@ -36,17 +54,17 @@
 #imagelightboxprev {
   top: 50%;
   left: 0;
-  width: 20px;
-  height: 34px;
-  background: url(../img/prev_arrow.png) no-repeat 50% 50%;
+  width: @imagelightbox-prev-width;
+  height: @imagelightbox-prev-height;
+  background: url("{@imagelightbox-prev-image-url}") no-repeat 50% 50%;
   padding: 30px;
 }
 
 #imagelightboxnext {
   top: 50%;
   right: 0;
-  width: 20px;
-  height: 34px;
-  background: url(../img/next_arrow.png) no-repeat 50% 50%;
+  width: @imagelightbox-next-width;
+  height: @imagelightbox-next-height;
+  background: url("{@imagelightbox-next-image-url}") no-repeat 50% 50%;
   padding: 30px;
 }
