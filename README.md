@@ -1,3 +1,5 @@
+## Warning: You probably want to use [this version](https://github.com/rejas/imagelightbox) instead. It's better and is actively maintained. See [this discussion](https://github.com/mrchimp/imagelightbox/issues/3) for more details. ##
+
 imagelightbox
 =============
 
