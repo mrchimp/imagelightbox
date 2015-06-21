@@ -301,6 +301,9 @@
               e.stopPropagation();
               
               target = targets.eq(targets.index(target) + 1);
+							if (!target.length) {
+								target = targets.eq(0);
+							}
 
               loadImage('right');
             })
